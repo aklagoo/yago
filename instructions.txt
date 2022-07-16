@@ -1,0 +1,11 @@
+CD INSTRUCTIONS             DATA TYPE  LENGTH
+
+00 Kill Satellite           -          0+1=1
+01 Reset                    -          0+1=1
+02 Handshake                -          0+1=1
+03 Force INIT mode          -          0+1=1
+04 Set system time          TIME       7+1=8
+05 Set next pass            TIME       7+1=8
+06 Custom voice telemetry   STRING     N+1=N+1
+07 Next picture time        TIME       7+1=8
+08 Set custom SSTV downlink TIME       7+1=8

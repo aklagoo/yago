@@ -1,0 +1,13 @@
+{
+  "domain"  : "http://localhost/Yago/",
+  "name"    : "Yago",
+  "authors" : ["Archan Lagoo", "Yashesh Gandhi", "Yash Makwana"],
+  "paths" : {
+    ""          : "Index",
+    "signin"    : "signIn",
+    "register"  : "Register",
+    "cafeteria" : "Cafeteria",
+    "404"       : "404",
+    "plate"     : "Plate"
+  }
+}
