@@ -16,10 +16,10 @@ The above requirements can be fulfilled as [WAMP][wamp], [LAMP][lamp], or
    system.
 2. Configure the username, password, and database name in
    `./app/includes/DatabaseEngine.php`.
-3. Set the database name in `./app/sql/generate.sql` at lines 1 and 2.
+3. Set the database name in `./sql/generate.sql` at lines 1 and 2.
 3. Execute the DDL script `generate.sql` by running the command below:
 ```bash
-mysql -u <USEERNAME> -p < ./app/sql/generate.sql
+mysql -u <USEERNAME> -p < ./sql/generate.sql
 ```
 4. Navigate to the URL specified by your installed server.
 
