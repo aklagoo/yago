@@ -7,6 +7,10 @@ class Model{
     $this->engine = new DatabaseEngine();
   }
   public function signIn($user, $password, $type){
+    /**
+     * Authenticates user details.
+     */
+
     $query = 'SELECT * FROM '.($type=='user'?'Customer':'Cafeteria').' WHERE '.($type=='user'?'email':'cafUserName').'=?';
     $values = array($user);
 
@@ -17,7 +21,8 @@ class Model{
       return;
     }
     $key = $type=='user'?'password':'cafPassword';
-    // if(password_verify($password, $result[0]['email'])){
+    
+    // If successful, save user details to the username.
     if($password===$result[0][$key]){
       $_SESSION['USER_DETAILS'] = $result[0];
       $_SESSION['USER_TYPE'] = $type;
