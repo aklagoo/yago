@@ -2,9 +2,9 @@
 
 class DatabaseEngine{
   public function __construct(){
-    $dbname = "";
-    $username = "";
-    $password = "";
+    $dbname = $_ENV["DB_NAME"];
+    $username = "root";
+    $password = $_ENV["DB_PASSWORD"];
     try{
       $this->connection = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
       $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

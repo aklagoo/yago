@@ -1,6 +1,4 @@
-DROP DATABASE IF EXISTS Schezwan;  -- Deleting the database if it exists
-CREATE DATABASE Schezwan;
-USE Schezwan;
+USE yago;
 
 CREATE TABLE Customer(
   custID   BIGINT       AUTO_INCREMENT,
