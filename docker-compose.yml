@@ -1,6 +1,9 @@
 # Use root/example as user/password credentials
 version: '3.1'
 
+networks:
+  local:
+
 services:
 
   db:
@@ -8,16 +11,30 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     env_file:
-      - docker/.env
+      - docker/db/.env
     volumes:
       - mysql_data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - local
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+  
+  app:
+    image: yago-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - docker/app/.env
+    networks:
+      - local
+    ports:
+      - "8000:80"
 
 volumes:
   mysql_data:
