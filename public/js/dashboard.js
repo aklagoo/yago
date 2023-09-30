@@ -67,7 +67,7 @@ function fetchAll() {
     var reply;
     $.ajax({
         type: "POST",
-        url: "http://yago1.000webhostapp.com/dashboard",
+        url: "/dashboard",
         data: {action : 'fetchAll'},
         success: function(rawData) {
             console.log(rawData);
@@ -92,7 +92,7 @@ $(document).on('click','.btnPaid',function(){
     console.log(parent);
     $.ajax({
         type: "POST",
-        url: "http://yago1.000webhostapp.com/dashboard",
+        url: "/dashboard",
         data: {action : 'paid', orderID:parseInt(id)},
         success: function(response) {
             location.reload();
@@ -106,7 +106,7 @@ $(document).on('click','.incr-collected',function(){
     id = $(this).attr('id');
     $.ajax({
         type: "POST",
-        url: "http://yago1.000webhostapp.com/dashboard",
+        url: "/dashboard",
         data: {action : 'modify', suborderID: parseInt(id) ,modifier: '+1', type: 'collected'},
         success : function(response) {
             location.reload(true);;
@@ -117,7 +117,7 @@ $(document).on('click','.decr-collected',function(){
     id = $(this).attr('id');
     $.ajax({
         type: "POST",
-        url: "http://yago1.000webhostapp.com/dashboard",
+        url: "/dashboard",
         data: {action : 'modify', suborderID: parseInt(id) ,modifier: '-1', type: 'collected'},
         success: function(response) {
             location.reload(true);;
@@ -128,7 +128,7 @@ $(document).on('click','.incr-prepared',function(){
     id = $(this).attr('id');
     $.ajax({
         type: "POST",
-        url: "http://yago1.000webhostapp.com/dashboard",
+        url: "/dashboard",
         data: {action : 'modify', suborderID: parseInt(id) ,modifier: '+1', type: 'prepared'},
         success: function(response) {
             location.reload(true);;

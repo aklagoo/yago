@@ -6,7 +6,7 @@ $(document).ready(function(){
         $.ajax({
             type    : 'POST',
             data    : obj,
-            url     : 'http://yago1.000webhostapp.com/login',
+            url     : '/login',
             success : function(response){
                 console.log(response);
                 if(response=='0') {
@@ -16,7 +16,7 @@ $(document).ready(function(){
                     alert("The combination doesn't match!");
                 }
                 else if(response=='2') {
-                    location.replace("http://yago1.000webhostapp.com/");
+                    location.replace("http://localhost:8000/");
                 }
             }
         });
@@ -26,7 +26,7 @@ $(document).ready(function(){
         $.ajax({
             type    : 'POST',
             data    : {action:'signOut'},
-            url     : 'http://yago1.000webhostapp.com/login',
+            url     : '/login',
             success : function(result){
                 console.log(response);
             }

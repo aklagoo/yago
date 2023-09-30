@@ -3,6 +3,7 @@
 require_once( BASE_PATH . '/includes/DatabaseEngine.php' );
 
 class Model {
+    private $engine;
     public function __construct() {
         $this->engine = new DatabaseEngine();
     }

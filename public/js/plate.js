@@ -25,7 +25,7 @@ function renderPlate() {
 function getPlate() {
     $.ajax({
         type : 'POST',
-        url : 'http://yago1.000webhostapp.com/plate',
+        url : '/plate',
         data : {
             action      : 'fetchPlate'
         },
@@ -44,7 +44,7 @@ $(document).ready(function(){
         foodID = $(this).attr('id');
         $.ajax({
             type : 'POST',
-            url : 'http://yago1.000webhostapp.com/plate',
+            url : '/plate',
             data : {
                 action : 'add',
                 foodID : $(this).attr('id')
@@ -59,7 +59,7 @@ $(document).ready(function(){
         par = $(this).parent().parent();
         $.ajax({
             type : 'POST',
-            url : 'http://yago1.000webhostapp.com/plate',
+            url : '/plate',
             data : {
                 action      : 'set',
                 foodID      : $(this).attr('id'),
@@ -84,7 +84,7 @@ $(document).ready(function(){
         par = $(this).parent().parent();
         $.ajax({
             type : 'POST',
-            url : 'http://yago1.000webhostapp.com/plate',
+            url : '/plate',
             data : {
                 action      : 'set',
                 foodID      : $(this).attr('id'),
@@ -107,7 +107,7 @@ $(document).ready(function(){
         id = parseInt($(this).attr('id'));
         $.ajax({
             type : 'POST',
-            url : 'http://yago1.000webhostapp.com/plate',
+            url : '/plate',
             data : {
                 action      : 'set',
                 foodID      : $(this).attr('id'),
@@ -131,7 +131,7 @@ $(document).ready(function(){
     $(document).on("click","#placeOrder",function(){
         $.ajax({
             type : 'POST',
-            url : 'http://yago1.000webhostapp.com/plate',
+            url : '/plate',
             data : {
                 action : 'placeOrder'
             },
@@ -142,7 +142,7 @@ $(document).ready(function(){
                     renderPlate();
                 }
                 else if(response==1) {
-                    location.replace("http://yago1.000webhostapp.com/login");
+                    location.replace("/login");
                 }
             }
         });
@@ -158,13 +158,13 @@ $(document).ready(function(){
         $(".plate-div").fadeOut();
     });
     $(".login-trigger").click(function(){
-        location.replace("http://yago1.000webhostapp.com/login");
+        location.replace("/login");
     });
     $(".logout-trigger").click(function(){
         $.ajax({
             type    : 'POST',
             data    : {action:'logout'},
-            url     : 'http://yago1.000webhostapp.com/login',
+            url     : '/login',
             success : function(result){
                 if(result=='0'){
                     location.reload();

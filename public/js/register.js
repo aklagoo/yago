@@ -27,11 +27,11 @@ $(document).ready(function(){
         if(!err) {
             $.ajax({
                 type : 'POST',
-                url : "http://yago1.000webhostapp.com/register",
+                url : "/register",
                 data : {action:'register', fName:document.user_register.fName.value, lName:document.user_register.lName.value, email:document.user_register.email.value, mobile:document.user_register.mobile.value, password:document.user_register.password.value},
                 success : function(response) {
                     if(response=='0'){
-                        location.replace("http://yago1.000webhostapp.com/");
+                        location.replace("/");
                     }
                     if(response=='1'){
                         alert("This email has already been registered.");

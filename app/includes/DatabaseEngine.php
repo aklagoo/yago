@@ -1,6 +1,7 @@
 <?php
 
 class DatabaseEngine{
+  private $connection;
   public function __construct(){
     $host=$_ENV["DB_HOST"];
     $dbname = $_ENV["DB_NAME"];
